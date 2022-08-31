@@ -68,7 +68,20 @@ deci.addEventListener('click', (e) => {
         let dot = e.target.innerHTML;
         screen.innerHTML = screen.innerHTML + dot;
     }
-})
+});
+
+let toggleBtn = document.getElementById('toggle-btn');
+
+toggleBtn.addEventListener('click', () =>{
+    document.getElementById('body').classList.toggle('body--light');
+    document.getElementById('title').classList.toggle('title--light');
+    document.getElementById('display').classList.toggle('display--light');
+    let btns = document.getElementsByClassName('btn');
+
+    Array.from(btns).forEach((btn)=>{
+        btn.classList.toggle('btn--light');
+    });
+});
 
 
 
