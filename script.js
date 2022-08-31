@@ -25,7 +25,7 @@ clearBtn.addEventListener('click', () => {
 
 Array.from(digits).forEach((digit) => {
     digit.addEventListener('click', (e) => {
-        if (flag) {
+        if (flag && operatorCount<1) {
             screen.innerHTML = "";
         }
         let num = (e.target.innerHTML);
@@ -39,9 +39,6 @@ let operatorArray = Array.from(operator);
 Array.from(operator).forEach((op) => {
     op.addEventListener('click', (e)=>{
         operatorCount++;
-        if (flag) {
-            screen.innerHTML = "";
-        }
         if(operatorCount > 1){
             screen.innerHTML = screen.innerHTML;
         }
